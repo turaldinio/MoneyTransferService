@@ -1,6 +1,6 @@
 package ru.guluev.moneytransferservice.model;
 
-public class Amount {
+public class AmountManager {
     private int value;
     private String currency;
 

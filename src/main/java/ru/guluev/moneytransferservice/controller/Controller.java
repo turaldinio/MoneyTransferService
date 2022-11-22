@@ -1,15 +1,16 @@
 package ru.guluev.moneytransferservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.annotation.RequestScope;
+import ru.guluev.moneytransferservice.model.TransferManager;
 
 @RestController
 public class Controller {
 
     @PostMapping("/transfer")
-    public void transfer() {
+    @ResponseStatus(HttpStatus.OK)
+    public void transfer(@RequestBody TransferManager transferManager) {
 
     }
 }

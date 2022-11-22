@@ -1,12 +1,12 @@
 package ru.guluev.moneytransferservice.model;
 
 
-public class Card {
+public class TransferManager {
     private String cardFromNumber;
     private String cardFromValidTill;
     private String cardFromCVV;
     private String cardToNumber;
-    private Amount amount;
+    private AmountManager amount;
 
     public String getCardFromNumber() {
         return cardFromNumber;
@@ -40,11 +40,12 @@ public class Card {
         this.cardToNumber = cardToNumber;
     }
 
-    public Amount getAmount() {
+    public AmountManager getAmount() {
         return amount;
     }
 
-    public void setAmount(Amount amount) {
+    public void setAmount(AmountManager amount) {
         this.amount = amount;
     }
+
 }
