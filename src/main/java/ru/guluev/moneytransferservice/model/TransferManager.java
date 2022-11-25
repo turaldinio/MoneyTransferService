@@ -48,4 +48,18 @@ public class TransferManager {
         this.amount = amount;
     }
 
+    public void transferMoney(int amount) {
+
+    }
+
+    @Override
+    public String toString() {
+        return "TransferManager{" +
+                "cardFromNumber='" + cardFromNumber + '\'' +
+                ", cardFromValidTill='" + cardFromValidTill + '\'' +
+                ", cardFromCVV='" + cardFromCVV + '\'' +
+                ", cardToNumber='" + cardToNumber + '\'' +
+                ", amount=" + amount +
+                '}';
+    }
 }
