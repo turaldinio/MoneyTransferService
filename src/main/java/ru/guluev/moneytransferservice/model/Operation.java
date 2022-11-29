@@ -19,4 +19,12 @@ public class Operation {
     public void setCode(String code) {
         this.code = code;
     }
+
+    @Override
+    public String toString() {
+        return
+                "operationId='" + operationId + '\'' +
+                ", code='" + code + '\'' +
+                '}';
+    }
 }

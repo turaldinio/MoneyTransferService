@@ -1,5 +1,7 @@
 package ru.guluev.moneytransferservice.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.guluev.moneytransferservice.model.Operation;
 import ru.guluev.moneytransferservice.model.TransferManager;
@@ -7,19 +9,23 @@ import ru.guluev.moneytransferservice.server.CartTransferService;
 
 @RestController
 public class CartTransferController {
-    private CartTransferService cartTransferService;
+    private final CartTransferService cartTransferService;
+
+    public CartTransferController(CartTransferService cartTransferService) {
+        this.cartTransferService = cartTransferService;
+    }
 
     @CrossOrigin
     @PostMapping("/transfer")
-    public void transfer(@RequestBody TransferManager transferManager) {
-        cartTransferService.transferMoney(transferManager);
+    public ResponseEntity<?> transfer(@RequestBody TransferManager transferManager) {
+        return cartTransferService.transferMoney(transferManager);
 
     }
 
     @CrossOrigin
     @PostMapping("/confirmOperation")
-    public String confirmOperation(@RequestBody Operation operation) {
-        return operation.getOperationId();
+    public ResponseEntity<?> confirmOperation(@RequestBody Operation operation) {
+        return cartTransferService.confirmOperation(operation);
     }
 
 
