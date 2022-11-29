@@ -20,14 +20,14 @@ public class CartTransferService {
 
     public ResponseEntity<?> transferMoney(TransferManager transferManager) {
         logWriter.writeLog(transferManager);
-        return new ResponseEntity<>(operationId.getAndAdd(1), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(operationId.getAndAdd(1), HttpStatus.OK);
     }
 
     public ResponseEntity<?> confirmOperation(Operation operation) {
         if (!operation.getCode().equals("0000")) {
             throw new ErrorInputDate("Error input date");
         }
-        return new ResponseEntity<>(operationId, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(operationId, HttpStatus.OK);
     }
 
 }
