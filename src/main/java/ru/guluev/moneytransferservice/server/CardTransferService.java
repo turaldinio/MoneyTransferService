@@ -19,15 +19,15 @@ public class CardTransferService {
     private AtomicInteger operationId;
 
     public ResponseEntity<?> transferMoney(TransferManager transferManager) {
-        logWriter.writeLog(transferManager);
-        return new ResponseEntity<>(operationId.getAndAdd(1), HttpStatus.OK);
+        logWriter.writeLog(transferManager, operationId.addAndGet(1));
+        return new ResponseEntity<>(operationId.get(), HttpStatus.OK);
     }
 
     public ResponseEntity<?> confirmOperation(Operation operation) {
         if (!operation.getCode().equals("0000")) {
             throw new ErrorInputDate("Error input date");
         }
-        return new ResponseEntity<>(operationId, HttpStatus.OK);
+        return new ResponseEntity<>(operationId.get(), HttpStatus.OK);
     }
 
 }

@@ -6,6 +6,7 @@ import ru.guluev.moneytransferservice.writer.LogWriter;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.text.SimpleDateFormat;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @org.springframework.context.annotation.Configuration
@@ -31,11 +32,16 @@ public class Configuration {
 
     @Bean
     public AtomicInteger atomicInteger() {
-        return new AtomicInteger(1);
+        return new AtomicInteger(0);
     }
 
     @Bean
     public LogWriter logWriter() {
         return new LogWriter();
+    }
+
+    @Bean
+    public SimpleDateFormat simpleDateFormat() {
+        return new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
     }
 }

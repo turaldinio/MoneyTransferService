@@ -1,6 +1,5 @@
 package ru.guluev.moneytransferservice.model;
 
-
 public class TransferManager {
     private String cardFromNumber;
     private String cardFromValidTill;
