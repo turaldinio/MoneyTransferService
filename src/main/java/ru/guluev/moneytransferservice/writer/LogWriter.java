@@ -16,8 +16,8 @@ public class LogWriter {
 
     public void writeLog(TransferManager transferManager, int operationId) {
         try {
-            fileWriter.write(simpleDateFormat.format(Calendar.getInstance().getTime()) +
-                    transferManager.toString() + operationId + "\n");
+            fileWriter.write(simpleDateFormat.format(Calendar.getInstance().getTime()) + " " +
+                    transferManager.toString() + " id=" + operationId + "\n");
             fileWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
