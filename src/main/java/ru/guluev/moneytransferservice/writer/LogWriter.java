@@ -1,4 +1,4 @@
-package ru.guluev.moneytransferservice;
+package ru.guluev.moneytransferservice.writer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.guluev.moneytransferservice.model.TransferManager;

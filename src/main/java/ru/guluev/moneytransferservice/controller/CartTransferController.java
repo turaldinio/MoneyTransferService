@@ -1,17 +1,16 @@
 package ru.guluev.moneytransferservice.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.guluev.moneytransferservice.model.Operation;
 import ru.guluev.moneytransferservice.model.TransferManager;
-import ru.guluev.moneytransferservice.server.CartTransferService;
+import ru.guluev.moneytransferservice.server.CardTransferService;
 
 @RestController
 public class CartTransferController {
-    private final CartTransferService cartTransferService;
+    private final CardTransferService cartTransferService;
 
-    public CartTransferController(CartTransferService cartTransferService) {
+    public CartTransferController(CardTransferService cartTransferService) {
         this.cartTransferService = cartTransferService;
     }
 
