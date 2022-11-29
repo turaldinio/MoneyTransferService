@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import ru.guluev.moneytransferservice.LogWriter;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @org.springframework.context.annotation.Configuration
@@ -18,9 +19,10 @@ public class Configuration {
     @Bean
     public File file() {
         File file = new File("src/main/resources/log.txt");
-        file.deleteOnExit();
         try {
-            file.createNewFile();
+            if (Files.deleteIfExists(file.toPath())) {
+                Files.createFile(file.toPath());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

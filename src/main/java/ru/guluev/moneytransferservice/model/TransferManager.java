@@ -54,12 +54,6 @@ public class TransferManager {
 
     @Override
     public String toString() {
-        return "TransferManager{" +
-                "cardFromNumber='" + cardFromNumber + '\'' +
-                ", cardFromValidTill='" + cardFromValidTill + '\'' +
-                ", cardFromCVV='" + cardFromCVV + '\'' +
-                ", cardToNumber='" + cardToNumber + '\'' +
-                ", amount=" + amount +
-                '}';
+        return String.format("money transfer from card : %s to card %s in the amount of %d",cardFromNumber,cardToNumber,amount.getValue());
     }
 }
