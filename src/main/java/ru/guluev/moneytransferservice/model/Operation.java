@@ -1,16 +1,10 @@
 package ru.guluev.moneytransferservice.model;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Operation {
     private String operationId;
-    private String code;
-
-    public String getOperationId() {
-        return operationId;
-    }
-
-    public void setOperationId(String operationId) {
-        this.operationId = operationId;
-    }
+    String code;
 
     public String getCode() {
         return code;
@@ -20,11 +14,16 @@ public class Operation {
         this.code = code;
     }
 
-    @Override
-    public String toString() {
-        return
-                "operationId='" + operationId + '\'' +
-                ", code='" + code + '\'' +
-                '}';
+    public String getOperationId() {
+        return operationId;
+    }
+
+    public void setOperationId(String operationId) {
+        this.operationId = operationId;
+    }
+
+    public String printOperationId() {
+        return "{" +
+                "\n\"operationId\":" + "\"" + operationId + "\"" + "\n}";
     }
 }

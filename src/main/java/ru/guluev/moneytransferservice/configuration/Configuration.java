@@ -2,6 +2,7 @@ package ru.guluev.moneytransferservice.configuration;
 
 
 import org.springframework.context.annotation.Bean;
+import ru.guluev.moneytransferservice.model.Operation;
 import ru.guluev.moneytransferservice.writer.LogWriter;
 
 import java.io.*;
@@ -43,5 +44,10 @@ public class Configuration {
     @Bean
     public SimpleDateFormat simpleDateFormat() {
         return new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+    }
+
+    @Bean
+    public Operation operation() {
+        return new Operation();
     }
 }

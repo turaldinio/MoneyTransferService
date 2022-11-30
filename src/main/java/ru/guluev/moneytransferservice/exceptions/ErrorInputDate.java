@@ -1,12 +1,13 @@
 package ru.guluev.moneytransferservice.exceptions;
 
+
 public class ErrorInputDate extends RuntimeException {
     private String msg;
     private int operationId;
 
-    public ErrorInputDate(String msg, int operationId) {
+    public ErrorInputDate(String msg) {
         this.msg = msg;
-        this.operationId = operationId;
+        this.operationId = 0;
     }
 
     @Override

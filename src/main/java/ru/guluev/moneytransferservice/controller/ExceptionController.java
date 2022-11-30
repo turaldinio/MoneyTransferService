@@ -26,6 +26,5 @@ public class ExceptionController {
     @ExceptionHandler(ErrorTransfer.class)
     public ResponseEntity<?> errorTransfer(ErrorTransfer errorTransfer) {
         return new ResponseEntity<>(errorTransfer.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-
     }
 }

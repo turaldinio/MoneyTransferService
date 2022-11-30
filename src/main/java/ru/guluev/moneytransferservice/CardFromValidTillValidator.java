@@ -16,10 +16,10 @@ public class CardFromValidTillValidator implements ConstraintValidator<CardFromV
         try {
             Date date = simpleDateFormat.parse(s);
             if (date.before(new Date())) {
-                throw new ErrorInputDate("the expiration date of the card is incorrectly specified",0);
+                throw new ErrorInputDate("the expiration date of the card is incorrectly specified");
             }
         } catch (ParseException e) {
-            throw new ErrorInputDate("the expiration date of the card is incorrectly specified",0);
+            throw new ErrorInputDate("the expiration date of the card is incorrectly specified");
         }
         return true;
     }
