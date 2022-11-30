@@ -14,7 +14,7 @@ public class ExceptionController {
 
     @ExceptionHandler(ErrorInputDate.class)
     public ResponseEntity<?> errorInputDate(ErrorInputDate errorInputDate) {
-        return new ResponseEntity<>(errorInputDate.getMessage(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errorInputDate.toString(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(ErrorConfirmation.class)
