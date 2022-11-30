@@ -1,6 +1,7 @@
 package ru.guluev.moneytransferservice.writer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import ru.guluev.moneytransferservice.OperationStatus;
 import ru.guluev.moneytransferservice.model.TransferManager;
 
 import java.io.FileWriter;
@@ -14,10 +15,10 @@ public class LogWriter {
     @Autowired
     private SimpleDateFormat simpleDateFormat;
 
-    public void writeLog(TransferManager transferManager, int operationId) {
+    public void writeLog(TransferManager transferManager, int operationId, OperationStatus operationStatus) {
         try {
             fileWriter.write(simpleDateFormat.format(Calendar.getInstance().getTime()) + " " +
-                    transferManager.toString() + " id=" + operationId + "\n");
+                    transferManager.toString() + " id=" + operationId + " " + operationStatus + "\n");
             fileWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,10 +1,21 @@
 package ru.guluev.moneytransferservice.model;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class TransferManager {
+    @Pattern(regexp = "^\\w{16}",message = "No way")
     private String cardFromNumber;
+
+    //@Pattern(regexp ="^\\d{2}[0-1][2-9]/+\\d}")
     private String cardFromValidTill;
+
+    @Pattern(regexp = "^\\w{3}")
     private String cardFromCVV;
+
+    @Pattern(regexp = "^\\w{16}")
     private String cardToNumber;
+
     private AmountManager amount;
 
     public String getCardFromNumber() {
