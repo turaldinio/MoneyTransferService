@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import ru.guluev.moneytransferservice.beans.Operation;
 import ru.guluev.moneytransferservice.OperationStatus;
+import ru.guluev.moneytransferservice.exceptions.ErrorConfirmation;
 import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;
 import ru.guluev.moneytransferservice.beans.LogWriter;
 import ru.guluev.moneytransferservice.beans.ConfirmOperation;
+import ru.guluev.moneytransferservice.exceptions.ErrorTransfer;
 import ru.guluev.moneytransferservice.model.TransferManager;
 
 import javax.validation.Valid;
@@ -26,6 +28,9 @@ public class CardTransferService {
     Operation operation;
 
     public Operation transferMoney(@Valid TransferManager transferManager) {
+        if (transferManager == null || logWriter == null || atomicInteger == null || operation == null) {
+            throw new ErrorTransfer("transfer error");
+        }
         operation.setOperationId(String.valueOf(atomicInteger.addAndGet(1)));
         logWriter.writeLog(transferManager, operation.getOperationId(), OperationStatus.SUCCESSFULLY);
 
@@ -34,7 +39,7 @@ public class CardTransferService {
 
     public Operation confirmOperation(ConfirmOperation confirmOperation) {
         if (!confirmOperation.getCode().equals("0000")) {
-            throw new ErrorInputDate("Error confirm operation");
+            throw new ErrorConfirmation("Error confirm operation");
         }
         return operation;
     }
