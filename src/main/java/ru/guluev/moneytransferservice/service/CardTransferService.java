@@ -1,15 +1,13 @@
 package ru.guluev.moneytransferservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
+import ru.guluev.moneytransferservice.beans.Operation;
 import ru.guluev.moneytransferservice.OperationStatus;
-import ru.guluev.moneytransferservice.exceptions.ErrorConfirmation;
 import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;
-import ru.guluev.moneytransferservice.writer.LogWriter;
-import ru.guluev.moneytransferservice.model.Operation;
+import ru.guluev.moneytransferservice.beans.LogWriter;
+import ru.guluev.moneytransferservice.beans.ConfirmOperation;
 import ru.guluev.moneytransferservice.model.TransferManager;
 
 import javax.validation.Valid;
@@ -22,10 +20,10 @@ public class CardTransferService {
     private LogWriter logWriter;
 
     @Autowired
-    private Operation operation;
+    AtomicInteger atomicInteger;
 
     @Autowired
-    AtomicInteger atomicInteger;
+    Operation operation;
 
     public Operation transferMoney(@Valid TransferManager transferManager) {
         operation.setOperationId(String.valueOf(atomicInteger.addAndGet(1)));
@@ -34,8 +32,8 @@ public class CardTransferService {
         return operation;
     }
 
-    public Operation confirmOperation(Operation operation) {
-        if (!operation.getCode().equals("0000")) {
+    public Operation confirmOperation(ConfirmOperation confirmOperation) {
+        if (!confirmOperation.getCode().equals("0000")) {
             throw new ErrorInputDate("Error confirm operation");
         }
         return operation;

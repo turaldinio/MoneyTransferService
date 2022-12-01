@@ -2,8 +2,9 @@ package ru.guluev.moneytransferservice.configuration;
 
 
 import org.springframework.context.annotation.Bean;
-import ru.guluev.moneytransferservice.model.Operation;
-import ru.guluev.moneytransferservice.writer.LogWriter;
+import ru.guluev.moneytransferservice.beans.Operation;
+import ru.guluev.moneytransferservice.beans.ConfirmOperation;
+import ru.guluev.moneytransferservice.beans.LogWriter;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -47,7 +48,12 @@ public class Configuration {
     }
 
     @Bean
-    public Operation operation() {
+    public ConfirmOperation operation() {
+        return new ConfirmOperation();
+    }
+
+    @Bean
+    Operation operationId() {
         return new Operation();
     }
 }

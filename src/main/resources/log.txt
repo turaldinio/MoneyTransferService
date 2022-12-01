@@ -1,1 +1,1 @@
-30-11-2022 20:13:09 money transfer from card : 9283478924782374 to card 9823791873981273 in the amount of 873200, commission 8732 id=1 SUCCESSFULLY
+01-12-2022 14:32:59 money transfer from card : 2374687236472364 to card 8271368172368712 in the amount of 763200, commission 7632 id=null SUCCESSFULLY

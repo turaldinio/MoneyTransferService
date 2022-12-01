@@ -1,5 +1,6 @@
 package ru.guluev.moneytransferservice.model;
 
+import ru.guluev.moneytransferservice.beans.AmountManager;
 import ru.guluev.moneytransferservice.annotation.CardFromValidTill;
 
 import javax.validation.constraints.Pattern;

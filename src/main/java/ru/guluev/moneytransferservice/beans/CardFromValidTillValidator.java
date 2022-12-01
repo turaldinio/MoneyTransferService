@@ -1,4 +1,4 @@
-package ru.guluev.moneytransferservice;
+package ru.guluev.moneytransferservice.beans;
 
 import ru.guluev.moneytransferservice.annotation.CardFromValidTill;
 import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;

@@ -1,4 +1,4 @@
-package ru.guluev.moneytransferservice.model;
+package ru.guluev.moneytransferservice.beans;
 
 public class AmountManager {
     private int value;

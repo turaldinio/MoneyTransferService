@@ -1,8 +1,6 @@
-package ru.guluev.moneytransferservice.model;
+package ru.guluev.moneytransferservice.beans;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-public class Operation {
+public class ConfirmOperation {
     private String operationId;
     String code;
 

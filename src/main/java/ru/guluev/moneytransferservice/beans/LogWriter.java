@@ -1,4 +1,4 @@
-package ru.guluev.moneytransferservice.writer;
+package ru.guluev.moneytransferservice.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.guluev.moneytransferservice.OperationStatus;
