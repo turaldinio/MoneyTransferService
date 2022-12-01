@@ -1,4 +1,4 @@
-package ru.guluev.moneytransferservice.beans;
+package ru.guluev.moneytransferservice.dateValidater;
 
 import ru.guluev.moneytransferservice.annotation.CardCVV;
 import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;

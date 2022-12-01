@@ -1,4 +1,4 @@
-package ru.guluev.moneytransferservice.beans;
+package ru.guluev.moneytransferservice.dateValidater;
 
 import ru.guluev.moneytransferservice.annotation.CardNumber;
 import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;
@@ -10,7 +10,7 @@ public class CardNumberValidator implements ConstraintValidator<CardNumber, Stri
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         if (!s.matches("\\d{16}")) {
-            throw new ErrorInputDate("The card number must consist of 16 digits");
+            throw new ErrorInputDate("The card number must consist of 16 digits "+s);
         }
         return true;
     }

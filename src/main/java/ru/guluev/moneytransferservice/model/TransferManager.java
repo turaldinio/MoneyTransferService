@@ -17,7 +17,7 @@ public class TransferManager {
     @CardCVV
     private String cardFromCVV;
 
-    @CardNumber
+    @CardNumber()
     private String cardToNumber;
 
     private AmountManager amount;

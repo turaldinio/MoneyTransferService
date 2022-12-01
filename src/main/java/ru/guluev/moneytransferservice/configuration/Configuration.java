@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import ru.guluev.moneytransferservice.beans.Operation;
 import ru.guluev.moneytransferservice.beans.ConfirmOperation;
 import ru.guluev.moneytransferservice.beans.LogWriter;
+import ru.guluev.moneytransferservice.exceptions.ExceptionResponse;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -56,4 +57,5 @@ public class Configuration {
     Operation operationId() {
         return new Operation();
     }
+
 }

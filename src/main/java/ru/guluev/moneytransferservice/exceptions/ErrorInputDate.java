@@ -2,21 +2,14 @@ package ru.guluev.moneytransferservice.exceptions;
 
 
 public class ErrorInputDate extends RuntimeException {
-    private String msg;
-    private int operationId;
+    private ExceptionResponse exceptionResponse;
 
     public ErrorInputDate(String msg) {
-        this.msg = msg;
-        this.operationId = 0;
+        exceptionResponse = new ExceptionResponse();
+        exceptionResponse.setMessage(msg);
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                "\"message\":" + msg + "," +
-                "\n" +
-                "\"id\": " + operationId +
-                "\n" +
-                "}";
+    public ExceptionResponse getExceptionResponse() {
+        return exceptionResponse;
     }
 }

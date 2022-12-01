@@ -14,17 +14,17 @@ public class ExceptionController {
 
     @ExceptionHandler(ErrorInputDate.class)
     public ResponseEntity<?> errorInputDate(ErrorInputDate errorInputDate) {
-        return new ResponseEntity<>(errorInputDate.toString(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errorInputDate.getExceptionResponse(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(ErrorConfirmation.class)
     public ResponseEntity<?> errorConfirmation(ErrorConfirmation errorConfirmation) {
-        return new ResponseEntity<>(errorConfirmation.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(errorConfirmation.getExceptionResponse(), HttpStatus.INTERNAL_SERVER_ERROR);
 
     }
 
     @ExceptionHandler(ErrorTransfer.class)
     public ResponseEntity<?> errorTransfer(ErrorTransfer errorTransfer) {
-        return new ResponseEntity<>(errorTransfer.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(errorTransfer.getExceptionResponse(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
