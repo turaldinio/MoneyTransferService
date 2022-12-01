@@ -1,21 +1,23 @@
 package ru.guluev.moneytransferservice.model;
 
+import ru.guluev.moneytransferservice.annotation.CardCVV;
+import ru.guluev.moneytransferservice.annotation.CardNumber;
 import ru.guluev.moneytransferservice.beans.AmountManager;
 import ru.guluev.moneytransferservice.annotation.CardFromValidTill;
 
 import javax.validation.constraints.Pattern;
 
 public class TransferManager {
-    @Pattern(regexp = "^\\w{16}")
+    @CardNumber
     private String cardFromNumber;
 
-    @CardFromValidTill()
+    @CardFromValidTill
     private String cardFromValidTill;
 
-    @Pattern(regexp = "^\\w{3}")
+    @CardCVV
     private String cardFromCVV;
 
-    @Pattern(regexp = "^\\w{16}")
+    @CardNumber
     private String cardToNumber;
 
     private AmountManager amount;
