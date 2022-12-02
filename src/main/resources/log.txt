@@ -1,0 +1,7 @@
+02-12-2022 13:42:42 Incorrect cvv code number (asd).The cvv must consist of 3 digits id=0 UNSUCCESSFULLY
+02-12-2022 13:43:16 Incorrect cvv code number (asd).The cvv must consist of 3 digits id=0 UNSUCCESSFULLY
+02-12-2022 13:43:23 Incorrect card number (767676767676767o).The card number must consist of 16 digits id=0 UNSUCCESSFULLY
+02-12-2022 13:43:39 The expiration date of the card is incorrectly specified.Enter the date in the format **/** id=0 UNSUCCESSFULLY
+02-12-2022 13:43:55 The card has expired! (03/22) id=0 UNSUCCESSFULLY
+02-12-2022 13:44:07 The card has expired! (12/22) id=0 UNSUCCESSFULLY
+02-12-2022 13:44:21 money transfer from card : 7676767676767679 to card 7676767676767676 in the amount of 87382700, commission 873827 id=1 SUCCESSFULLY

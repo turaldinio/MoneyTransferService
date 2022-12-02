@@ -1,6 +1,6 @@
 package ru.guluev.moneytransferservice.annotation;
 
-import ru.guluev.moneytransferservice.dateValidater.CardCVVValidator;
+import ru.guluev.moneytransferservice.validaters.CardCVVValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

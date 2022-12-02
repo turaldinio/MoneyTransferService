@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Validated
 public class CardTransferService {
     @Autowired
-    private LogWriter logWriter;
+    private LoggerService loggerService;
 
     @Autowired
     AtomicInteger atomicInteger;
@@ -27,11 +27,11 @@ public class CardTransferService {
     Operation operation;
 
     public Operation transferMoney(@Valid TransferManager transferManager) {
-        if (transferManager == null || logWriter == null || atomicInteger == null || operation == null) {
+        if (transferManager == null || loggerService == null || atomicInteger == null || operation == null) {
             throw new ErrorTransfer("transfer error");
         }
         operation.setOperationId(String.valueOf(atomicInteger.addAndGet(1)));
-        logWriter.writeLog(transferManager, operation.getOperationId(), OperationStatus.SUCCESSFULLY);
+        loggerService.writeLog(transferManager, operation.getOperationId(), OperationStatus.SUCCESSFULLY);
 
         return operation;
     }
