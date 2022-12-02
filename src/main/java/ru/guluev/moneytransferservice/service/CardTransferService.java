@@ -6,7 +6,6 @@ import org.springframework.validation.annotation.Validated;
 import ru.guluev.moneytransferservice.beans.Operation;
 import ru.guluev.moneytransferservice.OperationStatus;
 import ru.guluev.moneytransferservice.exceptions.ErrorConfirmation;
-import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;
 import ru.guluev.moneytransferservice.beans.LogWriter;
 import ru.guluev.moneytransferservice.beans.ConfirmOperation;
 import ru.guluev.moneytransferservice.exceptions.ErrorTransfer;
