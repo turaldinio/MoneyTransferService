@@ -1,1 +1,2 @@
-03-12-2022 13:13:30 The card has expired! (12/11) id=0 UNSUCCESSFULLY
+04-12-2022 20:08:51 the month (13/32) field must contain 2 digits id=0 UNSUCCESSFULLY
+04-12-2022 20:09:01 the month (12/32) field must contain 2 digits id=0 UNSUCCESSFULLY
