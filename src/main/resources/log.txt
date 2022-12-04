@@ -1,2 +1,10 @@
-04-12-2022 20:08:51 the month (13/32) field must contain 2 digits id=0 UNSUCCESSFULLY
-04-12-2022 20:09:01 the month (12/32) field must contain 2 digits id=0 UNSUCCESSFULLY
+04-12-2022 20:22:32 the month field (13) should be between 01-12  id=0 UNSUCCESSFULLY
+04-12-2022 20:22:43 the month (1) field must contain 2 digits [01-12] id=0 UNSUCCESSFULLY
+04-12-2022 20:22:55 the month field (00) should be between 01-12  id=0 UNSUCCESSFULLY
+04-12-2022 20:23:12 The card has expired! (01/00) id=0 UNSUCCESSFULLY
+04-12-2022 20:23:20 The card has expired! (01/89) id=0 UNSUCCESSFULLY
+04-12-2022 20:23:53 money transfer from card : 7676767676767679 to card 7676767676767676 in the amount of 87382700, commission 873827 id=1 SUCCESSFULLY
+04-12-2022 20:24:01 money transfer from card : 7676767676767679 to card 7676767676767676 in the amount of 87382700, commission 873827 id=2 SUCCESSFULLY
+04-12-2022 20:24:07 The card has expired! (01/70) id=0 UNSUCCESSFULLY
+04-12-2022 20:24:16 The card has expired! (01/43) id=0 UNSUCCESSFULLY
+04-12-2022 20:24:22 money transfer from card : 7676767676767679 to card 7676767676767676 in the amount of 87382700, commission 873827 id=3 SUCCESSFULLY
