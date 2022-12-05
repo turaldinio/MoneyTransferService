@@ -24,8 +24,8 @@ public class CartTransferController {
 
     @CrossOrigin
     @PostMapping("/confirmOperation")
-    public ResponseEntity<?> confirmOperation(@RequestBody ConfirmOperation operation) {
-        return new ResponseEntity<>(cartTransferService.confirmOperation(operation), HttpStatus.OK);
+    public Operation confirmOperation(@RequestBody ConfirmOperation confirmOperation) {
+        return cartTransferService.confirmOperation(confirmOperation);
     }
 
 

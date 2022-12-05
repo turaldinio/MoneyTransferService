@@ -4,6 +4,15 @@ public class ConfirmOperation {
     private String operationId;
     String code;
 
+    public ConfirmOperation(){
+
+    }
+
+    public ConfirmOperation(String operationId, String code) {
+        this.operationId = operationId;
+        this.code = code;
+    }
+
     public String getCode() {
         return code;
     }

@@ -49,10 +49,7 @@ public class Configuration {
         return new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
     }
 
-    @Bean
-    public ConfirmOperation operation() {
-        return new ConfirmOperation();
-    }
+
 
     @Bean
     Operation operationId() {
