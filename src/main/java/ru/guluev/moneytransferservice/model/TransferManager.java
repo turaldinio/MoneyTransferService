@@ -21,6 +21,14 @@ public class TransferManager {
 
     private AmountManager amount;
 
+    public TransferManager(String cardFromNumber, String cardFromValidTill, String cardFromCVV, String cardToNumber, AmountManager amount) {
+        this.cardFromNumber = cardFromNumber;
+        this.cardFromValidTill = cardFromValidTill;
+        this.cardFromCVV = cardFromCVV;
+        this.cardToNumber = cardToNumber;
+        this.amount = amount;
+    }
+
     public String getCardFromNumber() {
         return cardFromNumber;
     }

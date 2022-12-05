@@ -4,6 +4,11 @@ public class AmountManager {
     private int value;
     private String currency;
 
+    public AmountManager(int value, String currency) {
+        this.value = value;
+        this.currency = currency;
+    }
+
     public int getValue() {
         return value;
     }
