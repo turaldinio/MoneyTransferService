@@ -7,7 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class MoneyTransferServiceApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void startApplication() {
+
     }
+
 
 }
