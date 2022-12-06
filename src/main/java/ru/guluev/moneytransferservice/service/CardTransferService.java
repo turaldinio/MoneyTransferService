@@ -27,8 +27,8 @@ public class CardTransferService {
     Operation operation;
 
     public Operation transferMoney(@Valid TransferManager transferManager) {
-        if (transferManager == null || loggerService == null || atomicInteger == null || operation == null) {
-            throw new ErrorTransfer("transfer error");
+        if (transferManager.getCardFromNumber().equals(transferManager.getCardToNumber())) {
+            throw new ErrorTransfer("you cannot transfer money to the same card");
         }
         operation.setOperationId(String.valueOf(atomicInteger.addAndGet(1)));
         loggerService.writeLog(transferManager, operation.getOperationId(), OperationStatus.SUCCESSFULLY);

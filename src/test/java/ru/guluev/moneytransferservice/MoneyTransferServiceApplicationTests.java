@@ -53,8 +53,29 @@ class MoneyTransferServiceApplicationTests {
     }
 
 
+    @Test
+    public void responseErrorBadRequest() throws URISyntaxException {
+        uri = new URI(String.format("http://localhost:%s/transfer", port));
 
+        entity = new HttpEntity<>(new TransferManager(
+                "12312312312312312",
+                "12/23",
+                "1231",
+                "3378623487623476"
+                , new AmountManager(2881, "rub")
+        ));
+        Assertions.assertEquals(400, requestResponse(entity));
+    }
 
+    @Test
+    public void responseErrorInternalErrorServer() throws URISyntaxException {
+        uri = new URI(String.format("http://localhost:%s/confirmOperation", port));
+
+        entity = new HttpEntity<>(new ConfirmOperation(
+                "1", "0001"
+        ));
+        Assertions.assertEquals(500, requestResponse(entity));
+    }
 
 
     public int requestResponse(HttpEntity<?> entity) {
