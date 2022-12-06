@@ -1,11 +1,13 @@
 services:
   backend:
-    image: 'moneytransfer'
+    image: 'backend:latest'
     ports:
-      - '5500'
-
+      - '5500:5500'
+    depends_on:
+      - front
 
   front:
-    image: 'front'
+    image: 'front:v1'
     ports:
-      - '3000'
+      - '3000:3000'
+
