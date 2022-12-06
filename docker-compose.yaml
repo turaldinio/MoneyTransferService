@@ -1,0 +1,11 @@
+services:
+  backend:
+    image: 'moneytransfer'
+    ports:
+      - '5500'
+
+
+  front:
+    image: 'front'
+    ports:
+      - '3000'
