@@ -78,6 +78,7 @@ class MoneyTransferServiceApplicationTests {
     }
 
 
+
     public int requestResponse(HttpEntity<?> entity) {
         return restTemplate.postForEntity(uri, entity, Operation.class).getStatusCodeValue();
     }
