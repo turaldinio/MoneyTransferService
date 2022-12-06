@@ -2,12 +2,10 @@ package ru.guluev.moneytransferservice.configuration;
 
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
 import ru.guluev.moneytransferservice.beans.Operation;
-import ru.guluev.moneytransferservice.beans.ConfirmOperation;
 import ru.guluev.moneytransferservice.beans.LogWriter;
-import ru.guluev.moneytransferservice.exceptions.ExceptionResponse;
 
+import javax.swing.filechooser.FileSystemView;
 import java.io.*;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
@@ -23,7 +21,8 @@ public class Configuration {
 
     @Bean
     public File file() {
-        File file = new File("src/main/resources/log.txt");
+        var homeDirectory=FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath()+"/log.txt";
+        File file = new File(homeDirectory);
         try {
             if (Files.deleteIfExists(file.toPath())) {
                 Files.createFile(file.toPath());

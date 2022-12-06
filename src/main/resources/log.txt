@@ -1,3 +1,0 @@
-06-12-2022 20:54:09 money transfer from card : 1231231231231231 to card 3378623487623476 in the amount of 2881, commission 28 id=1 SUCCESSFULLY
-06-12-2022 20:54:09 Incorrect cvv code number (1231).The cvv must consist of 3 digits id=0 UNSUCCESSFULLY
-06-12-2022 20:54:09 Error confirm operation id=0 UNSUCCESSFULLY
