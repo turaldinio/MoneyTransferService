@@ -36,7 +36,7 @@ class MoneyTransferServiceApplicationTests {
                 "12/23",
                 "123",
                 "3378623487623476"
-                , new AmountManager(2881, "rub")
+                , new AmountManager("2881", "rub")
         ));
         Assertions.assertEquals(200, requestResponse(entity));
     }
@@ -62,7 +62,7 @@ class MoneyTransferServiceApplicationTests {
                 "12/23",
                 "1231",
                 "3378623487623476"
-                , new AmountManager(2881, "rub")
+                , new AmountManager("2881", "rub")
         ));
         Assertions.assertEquals(400, requestResponse(entity));
     }

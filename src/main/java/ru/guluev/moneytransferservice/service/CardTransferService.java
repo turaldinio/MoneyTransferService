@@ -3,6 +3,7 @@ package ru.guluev.moneytransferservice.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
+import ru.guluev.moneytransferservice.beans.AmountManager;
 import ru.guluev.moneytransferservice.beans.Operation;
 import ru.guluev.moneytransferservice.OperationStatus;
 import ru.guluev.moneytransferservice.exceptions.ErrorConfirmation;
@@ -26,7 +27,7 @@ public class CardTransferService {
     @Autowired
     Operation operation;
 
-    public Operation transferMoney(@Valid TransferManager transferManager) {
+    public Operation transferMoney(@Valid TransferManager transferManager, @Valid AmountManager amountManager) {
         if (transferManager.getCardFromNumber().equals(transferManager.getCardToNumber())) {
             throw new ErrorTransfer("you cannot transfer money to the same card");
         }

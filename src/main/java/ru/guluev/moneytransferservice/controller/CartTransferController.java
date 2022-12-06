@@ -19,7 +19,7 @@ public class CartTransferController {
     @CrossOrigin
     @PostMapping("/transfer")
     public Operation transfer(@RequestBody TransferManager transferManager) {
-        return cartTransferService.transferMoney(transferManager);
+        return cartTransferService.transferMoney(transferManager,transferManager.getAmount());
     }
 
     @CrossOrigin

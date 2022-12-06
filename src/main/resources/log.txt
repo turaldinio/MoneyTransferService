@@ -1,1 +1,1 @@
-06-12-2022 00:21:15 Error confirm operation id=0 UNSUCCESSFULLY
+06-12-2022 17:30:47 the transfer amount is specified incorrectly id=0 UNSUCCESSFULLY
