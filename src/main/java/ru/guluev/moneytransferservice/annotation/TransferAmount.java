@@ -1,6 +1,7 @@
 package ru.guluev.moneytransferservice.annotation;
 
-import ru.guluev.moneytransferservice.validaters.CardNumberValidator;
+
+import ru.guluev.moneytransferservice.validaters.TransferAmountValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -12,12 +13,12 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Target({FIELD})
 @Retention(RUNTIME)
-@Constraint(validatedBy = CardNumberValidator.class)
-public @interface CardNumber {
-    String message() default "{CardNumber.invalid}";
+@Constraint(validatedBy = TransferAmountValidator.class)
+public @interface TransferAmount {
+    String message() default "{TransferAmount.invalid}";
 
-    Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 
 }

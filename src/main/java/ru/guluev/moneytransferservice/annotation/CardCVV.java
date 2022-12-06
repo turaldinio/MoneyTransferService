@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Constraint(validatedBy = CardCVVValidator.class)
 public @interface CardCVV {
-    String message() default "{CardFromValidTill.invalid}";
+    String message() default "{CardCVV.invalid}";
 
     Class<?>[] groups() default { };
 
