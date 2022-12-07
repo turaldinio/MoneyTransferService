@@ -1,4 +1,4 @@
-package ru.guluev.moneytransferservice.validaters;
+package ru.guluev.moneytransferservice.validators;
 
 import ru.guluev.moneytransferservice.annotation.CardCVV;
 import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;

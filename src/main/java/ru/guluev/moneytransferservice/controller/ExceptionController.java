@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ru.guluev.moneytransferservice.OperationStatus;
+import ru.guluev.moneytransferservice.enums.OperationStatus;
 import ru.guluev.moneytransferservice.exceptions.ErrorConfirmation;
 import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;
 import ru.guluev.moneytransferservice.exceptions.ErrorTransfer;

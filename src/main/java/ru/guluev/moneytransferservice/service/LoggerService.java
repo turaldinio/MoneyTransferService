@@ -2,7 +2,7 @@ package ru.guluev.moneytransferservice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.guluev.moneytransferservice.OperationStatus;
+import ru.guluev.moneytransferservice.enums.OperationStatus;
 import ru.guluev.moneytransferservice.beans.LogWriter;
 import ru.guluev.moneytransferservice.exceptions.ExceptionResponse;
 import ru.guluev.moneytransferservice.model.TransferManager;

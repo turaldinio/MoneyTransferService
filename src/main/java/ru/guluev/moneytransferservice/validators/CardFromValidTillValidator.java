@@ -1,7 +1,6 @@
-package ru.guluev.moneytransferservice.validaters;
+package ru.guluev.moneytransferservice.validators;
 
 import ru.guluev.moneytransferservice.annotation.CardFromValidTill;
-import ru.guluev.moneytransferservice.exceptions.ErrorConfirmation;
 import ru.guluev.moneytransferservice.exceptions.ErrorInputDate;
 
 import javax.validation.ConstraintValidator;
@@ -9,8 +8,6 @@ import javax.validation.ConstraintValidatorContext;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CardFromValidTillValidator implements ConstraintValidator<CardFromValidTill, String> {
     @Override
