@@ -1,13 +1,13 @@
 package ru.guluev.moneytransferservice;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
 import org.testcontainers.containers.GenericContainer;
+import org.testcontainers.containers.wait.strategy.Wait;
 import ru.guluev.moneytransferservice.beans.AmountManager;
 import ru.guluev.moneytransferservice.beans.Operation;
 import ru.guluev.moneytransferservice.model.TransferManager;
@@ -23,18 +23,28 @@ public class TestContainers {
 
 
     private GenericContainer<?> backend = new GenericContainer<>("backend").withExposedPorts(5500);
-    private GenericContainer<?> frontend = new GenericContainer<>("fronted").withExposedPorts(3000);
+    private GenericContainer<?> frontend = new GenericContainer<>("front:v1").withExposedPorts(3000);
+
+    @Test
+    void containerFrontendTest() throws URISyntaxException {
+        frontend.start();
+
+        frontend.waitingFor(Wait.forLogMessage("Compiled", 3));
+
+        String backendPort = String.valueOf(frontend.getMappedPort(3000));
+        uri = new URI(String.format("http://localhost:%s", backendPort));
+
+        Assertions.assertEquals(200, restTemplate.getForEntity(uri, String.class).getStatusCodeValue());
 
 
-    @BeforeEach
-    void start() {
-     //   frontend.start();
-        backend.start();
     }
+
 
     @Test
     void containerTest() throws URISyntaxException {
-        Integer backendPort=backend.getMappedPort(5500);
+        backend.start();
+
+        Integer backendPort = backend.getMappedPort(5500);
         uri = new URI(String.format("http://localhost:%s/transfer", backendPort));
 
         var entity = new HttpEntity<>(new TransferManager(

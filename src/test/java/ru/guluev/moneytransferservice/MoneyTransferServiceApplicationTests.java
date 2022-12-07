@@ -28,7 +28,7 @@ class MoneyTransferServiceApplicationTests {
 
 
     @Test
-    public void receivingATransferRequest() throws URISyntaxException {
+    public void transferOperation() throws URISyntaxException {
         uri = new URI(String.format("http://localhost:%s/transfer", port));
 
         entity = new HttpEntity<>(new TransferManager(
@@ -42,7 +42,7 @@ class MoneyTransferServiceApplicationTests {
     }
 
     @Test
-    public void receivingAConfirmOperationRequest() throws URISyntaxException {
+    public void confirmOperation() throws URISyntaxException {
         uri = new URI(String.format("http://localhost:%s/confirmOperation", port));
 
         entity = new HttpEntity<>(new ConfirmOperation(
@@ -76,7 +76,6 @@ class MoneyTransferServiceApplicationTests {
         ));
         Assertions.assertEquals(500, requestResponse(entity));
     }
-
 
 
     public int requestResponse(HttpEntity<?> entity) {
