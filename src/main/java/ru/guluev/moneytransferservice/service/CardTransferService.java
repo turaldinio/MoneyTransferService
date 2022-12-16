@@ -10,6 +10,7 @@ import ru.guluev.moneytransferservice.exceptions.ErrorConfirmation;
 import ru.guluev.moneytransferservice.beans.ConfirmOperation;
 import ru.guluev.moneytransferservice.exceptions.ErrorTransfer;
 import ru.guluev.moneytransferservice.model.TransferManager;
+import ru.guluev.moneytransferservice.repository.OperationRepository;
 
 import javax.validation.Valid;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -19,6 +20,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CardTransferService {
     @Autowired
     private LoggerService loggerService;
+
+    @Autowired
+    private OperationRepository operationRepository;
 
     @Autowired
     private AtomicInteger atomicInteger;
@@ -39,6 +43,7 @@ public class CardTransferService {
         if (!confirmOperation.getCode().equals("0000")) {
             throw new ErrorConfirmation("Error confirm operation");
         }
+
         return operation;
     }
 
