@@ -1,14 +1,14 @@
 package ru.guluev.moneytransferservice.beans;
 
 public class ConfirmOperation {
-    private String operationId;
+    private int operationId;
     String code;
 
     public ConfirmOperation(){
 
     }
 
-    public ConfirmOperation(String operationId, String code) {
+    public ConfirmOperation(int operationId, String code) {
         this.operationId = operationId;
         this.code = code;
     }
@@ -21,13 +21,13 @@ public class ConfirmOperation {
         this.code = code;
     }
 
-    public String getOperationId() {
+    public int getOperationId() {
         return operationId;
     }
 
-    public void setOperationId(String operationId) {
-        this.operationId = operationId;
-    }
+//    public void setOperationId(String operationId) {
+//        this.operationId = operationId;
+//    }
 
     public String printOperationId() {
         return "{" +

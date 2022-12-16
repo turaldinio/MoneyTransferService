@@ -1,13 +1,17 @@
 package ru.guluev.moneytransferservice.beans;
 
 public class Operation {
-    private String operationId;
+    private int operationId;
 
-    public String getOperationId() {
+    public Operation(int operationId) {
+        this.operationId = operationId;
+    }
+
+    public int getOperationId() {
         return operationId;
     }
 
-    public void setOperationId(String operationId) {
+    public void setOperationId(int operationId) {
         this.operationId = operationId;
     }
 }

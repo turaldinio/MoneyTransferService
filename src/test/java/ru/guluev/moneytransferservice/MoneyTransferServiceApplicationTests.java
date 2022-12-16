@@ -46,7 +46,7 @@ class MoneyTransferServiceApplicationTests {
         uri = new URI(String.format("http://localhost:%s/confirmOperation", port));
 
         entity = new HttpEntity<>(new ConfirmOperation(
-                "1", "0000"
+                1, "0000"
         ));
         Assertions.assertEquals(200, requestResponse(entity));
 
@@ -72,7 +72,7 @@ class MoneyTransferServiceApplicationTests {
         uri = new URI(String.format("http://localhost:%s/confirmOperation", port));
 
         entity = new HttpEntity<>(new ConfirmOperation(
-                "1", "0001"
+                1, "0001"
         ));
         Assertions.assertEquals(500, requestResponse(entity));
     }

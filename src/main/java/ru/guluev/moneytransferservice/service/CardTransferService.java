@@ -1,6 +1,5 @@
 package ru.guluev.moneytransferservice.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import ru.guluev.moneytransferservice.beans.AmountManager;
@@ -18,22 +17,26 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 @Validated
 public class CardTransferService {
-    @Autowired
-    private LoggerService loggerService;
+    private final LoggerService loggerService;
 
-    @Autowired
-    private OperationRepository operationRepository;
+    private final OperationRepository operationRepository;
 
-    @Autowired
-    private AtomicInteger atomicInteger;
+    private AtomicInteger atomicInteger = new AtomicInteger(0);
 
-    private Operation operation;
+
+    public CardTransferService(LoggerService loggerService, OperationRepository operationRepository) {
+        this.loggerService = loggerService;
+        this.operationRepository = operationRepository;
+    }
 
     public Operation transferMoney(@Valid TransferManager transferManager, @Valid AmountManager amountManager) {
         if (transferManager.getCardFromNumber().equals(transferManager.getCardToNumber())) {
             throw new ErrorTransfer("you cannot transfer money to the same card");
         }
-        operation.setOperationId(String.valueOf(atomicInteger.addAndGet(1)));
+        Operation operation = new Operation(atomicInteger.addAndGet(1));
+
+        operationRepository.addNewOperation(operation);
+
         loggerService.writeLog(transferManager, operation.getOperationId(), OperationStatus.SUCCESSFULLY);
 
         return operation;
@@ -43,8 +46,8 @@ public class CardTransferService {
         if (!confirmOperation.getCode().equals("0000")) {
             throw new ErrorConfirmation("Error confirm operation");
         }
+        return operationRepository.getValueByKey(confirmOperation.getOperationId());
 
-        return operation;
     }
 
 }

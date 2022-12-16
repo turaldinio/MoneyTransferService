@@ -16,7 +16,7 @@ public class LogWriter {
     @Autowired
     private SimpleDateFormat simpleDateFormat;
 
-    public void writeLog(TransferManager transferManager, String operationId, OperationStatus operationStatus) {
+    public void writeLog(TransferManager transferManager, int operationId, OperationStatus operationStatus) {
         try {
             fileWriter.write(simpleDateFormat.format(Calendar.getInstance().getTime()) + " " +
                     transferManager.toString() + " id=" + operationId + " " + operationStatus + "\n");

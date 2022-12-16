@@ -12,7 +12,7 @@ public class LoggerService {
     @Autowired
     private LogWriter logWriter;
 
-    public void writeLog(TransferManager transferManager, String operationId, OperationStatus operationStatus) {
+    public void writeLog(TransferManager transferManager, int operationId, OperationStatus operationStatus) {
         logWriter.writeLog(transferManager, operationId, operationStatus);
     }
 
