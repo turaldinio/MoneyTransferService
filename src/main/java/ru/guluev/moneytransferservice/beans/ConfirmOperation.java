@@ -24,13 +24,4 @@ public class ConfirmOperation {
     public int getOperationId() {
         return operationId;
     }
-
-//    public void setOperationId(String operationId) {
-//        this.operationId = operationId;
-//    }
-
-    public String printOperationId() {
-        return "{" +
-                "\n\"operationId\":" + "\"" + operationId + "\"" + "\n}";
-    }
 }
