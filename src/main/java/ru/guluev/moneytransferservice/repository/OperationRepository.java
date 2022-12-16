@@ -5,7 +5,6 @@ import ru.guluev.moneytransferservice.beans.Operation;
 import ru.guluev.moneytransferservice.exceptions.ErrorConfirmation;
 
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class OperationRepository {

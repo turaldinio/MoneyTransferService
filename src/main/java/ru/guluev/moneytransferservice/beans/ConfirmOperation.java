@@ -2,7 +2,7 @@ package ru.guluev.moneytransferservice.beans;
 
 public class ConfirmOperation {
     private int operationId;
-    String code;
+    private String code;
 
     public ConfirmOperation(){
 

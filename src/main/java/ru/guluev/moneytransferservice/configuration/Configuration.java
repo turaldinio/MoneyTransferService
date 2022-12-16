@@ -2,7 +2,6 @@ package ru.guluev.moneytransferservice.configuration;
 
 
 import org.springframework.context.annotation.Bean;
-import ru.guluev.moneytransferservice.beans.Operation;
 import ru.guluev.moneytransferservice.beans.LogWriter;
 
 import javax.swing.filechooser.FileSystemView;

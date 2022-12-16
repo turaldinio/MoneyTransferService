@@ -9,8 +9,11 @@ import ru.guluev.moneytransferservice.model.TransferManager;
 
 @Service
 public class LoggerService {
-    @Autowired
-    private LogWriter logWriter;
+    private final LogWriter logWriter;
+
+    public LoggerService(LogWriter logWriter) {
+        this.logWriter = logWriter;
+    }
 
     public void writeLog(TransferManager transferManager, int operationId, OperationStatus operationStatus) {
         logWriter.writeLog(transferManager, operationId, operationStatus);

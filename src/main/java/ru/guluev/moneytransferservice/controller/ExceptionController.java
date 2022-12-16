@@ -1,6 +1,5 @@
 package ru.guluev.moneytransferservice.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,8 +13,11 @@ import ru.guluev.moneytransferservice.service.LoggerService;
 @RestControllerAdvice
 public class ExceptionController {
 
-    @Autowired
-    private LoggerService loggerService;
+    private final LoggerService loggerService;
+
+    public ExceptionController(LoggerService loggerService) {
+        this.loggerService = loggerService;
+    }
 
 
     @ExceptionHandler(ErrorInputDate.class)
