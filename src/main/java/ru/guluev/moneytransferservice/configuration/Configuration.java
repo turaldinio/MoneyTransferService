@@ -50,9 +50,5 @@ public class Configuration {
 
 
 
-    @Bean
-    Operation operationId() {
-        return new Operation();
-    }
 
 }
