@@ -17,7 +17,7 @@ public class OperationRepository {
     }
 
     public void addNewOperation( Operation operation) {
-        map.put(operation.getOperationId(), operation);
+        map.put(Integer.valueOf(operation.getOperationId()), operation);
     }
 
     public ConcurrentHashMap<Integer, Operation> getMap() {

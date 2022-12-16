@@ -7,6 +7,10 @@ public class Operation {
         this.operationId = operationId;
     }
 
+    public Operation() {
+
+    }
+
     public int getOperationId() {
         return operationId;
     }

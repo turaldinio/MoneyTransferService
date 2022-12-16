@@ -43,6 +43,7 @@ class MoneyTransferServiceApplicationTests {
 
     @Test
     public void confirmOperation() throws URISyntaxException {
+        transferOperation();
         uri = new URI(String.format("http://localhost:%s/confirmOperation", port));
 
         entity = new HttpEntity<>(new ConfirmOperation(
