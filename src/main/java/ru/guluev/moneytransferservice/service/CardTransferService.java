@@ -21,10 +21,9 @@ public class CardTransferService {
     private LoggerService loggerService;
 
     @Autowired
-    AtomicInteger atomicInteger;
+    private AtomicInteger atomicInteger;
 
-    @Autowired
-    Operation operation;
+    private Operation operation;
 
     public Operation transferMoney(@Valid TransferManager transferManager, @Valid AmountManager amountManager) {
         if (transferManager.getCardFromNumber().equals(transferManager.getCardToNumber())) {
